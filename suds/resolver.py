@@ -126,14 +126,14 @@ class PathResolver(Resolver):
         """
         result = None
         name = parts[0]
-        log.debug('searching schema for (%s)', name)
+        # log.debug('searching schema for (%s)', name)
         qref = self.qualify(parts[0])
         query = BlindQuery(qref)
         result = query.execute(self.schema)
         if result is None:
             log.error('(%s) not-found', name)
             raise PathResolver.BadPath(name)
-        log.debug('found (%s) as (%s)', name, Repr(result))
+        # log.debug('found (%s) as (%s)', name, Repr(result))
         return result
 
     def branch(self, root, parts):

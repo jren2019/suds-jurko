@@ -85,7 +85,7 @@ class ServiceDefinition(UnicodeMixin):
                 binding = m.binding.input
                 method = (m.name, binding.param_defs(m))
                 p[1].append(method)
-                metrics.log.debug("method '%s' created: %s", m.name, timer)
+                # metrics.log.debug("method '%s' created: %s", m.name, timer)
             p[1].sort()
         timer.stop()
 

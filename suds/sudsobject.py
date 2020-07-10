@@ -197,10 +197,10 @@ class Iter:
             ordering = sobject.__metadata__.ordering
             ordered = set(ordering)
             if not ordered.issuperset(keyset):
-                log.debug(
-                    '%s must be superset of %s, ordering ignored',
-                    keylist,
-                    ordering)
+                # log.debug(
+                #     '%s must be superset of %s, ordering ignored',
+                #     keylist,
+                #     ordering)
                 raise KeyError()
             return ordering
         except:

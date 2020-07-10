@@ -227,7 +227,7 @@ class Factory:
                 log.error("create '%s' failed", name, exc_info=True)
                 raise BuildError(name, e)
         timer.stop()
-        metrics.log.debug('%s created: %s', name, timer)
+        # metrics.log.debug('%s created: %s', name, timer)
         return result
 
     def separator(self, ps):

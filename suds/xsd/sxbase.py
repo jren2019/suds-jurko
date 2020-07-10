@@ -371,7 +371,7 @@ class SchemaObject(UnicodeMixin):
             if isqref(ref):
                 continue
             qref = qualify(ref, self.root, defns)
-            log.debug('%s, convert %s="%s" to %s', self.id, a, ref, qref)
+            # log.debug('%s, convert %s="%s" to %s', self.id, a, ref, qref)
             setattr(self, a, qref)
 
     def merge(self, other):

@@ -100,7 +100,7 @@ class Typed(Core):
         self.translate(content)
         self.sort(content)
         if self.skip(content):
-            log.debug('skipping (optional) content:\n%s', content)
+            # log.debug('skipping (optional) content:\n%s', content)
             self.resolver.pop()
             return False
         return True

@@ -49,7 +49,7 @@ class Core:
         @param content: The content to process.
         @type content: L{Object}
         """
-        log.debug('processing:\n%s', content)
+        # log.debug('processing:\n%s', content)
         self.reset()
         if content.tag is None:
             content.tag = content.value.__class__.__name__
