@@ -149,13 +149,13 @@ class PathResolver(Resolver):
         result = root
         for part in parts[1:-1]:
             name = splitPrefix(part)[1]
-            log.debug('searching parent (%s) for (%s)', Repr(result), name)
+            # log.debug('searching parent (%s) for (%s)', Repr(result), name)
             result, ancestry = result.get_child(name)
             if result is None:
                 log.error('(%s) not-found', name)
                 raise PathResolver.BadPath(name)
             result = result.resolve(nobuiltin=True)
-            log.debug('found (%s) as (%s)', name, Repr(result))
+            # log.debug('found (%s) as (%s)', name, Repr(result))
         return result
 
     def leaf(self, parent, parts):
@@ -254,7 +254,7 @@ class TreeResolver(Resolver):
         else:
             frame = Frame(x)
         self.stack.append(frame)
-        log.debug('push: (%s)\n%s', Repr(frame), Repr(self.stack))
+        # log.debug('push: (%s)\n%s', Repr(frame), Repr(self.stack))
         return frame
 
     def top(self):
@@ -291,7 +291,7 @@ class TreeResolver(Resolver):
 
     def getchild(self, name, parent):
         """Get a child by name."""
-        log.debug('searching parent (%s) for (%s)', Repr(parent), name)
+        # log.debug('searching parent (%s) for (%s)', Repr(parent), name)
         if name.startswith('@'):
             return parent.get_attribute(name[1:])
         return parent.get_child(name)

@@ -67,7 +67,7 @@ class Core:
         @param content: The content to append.
         @type content: L{Object}
         """
-        log.debug('appending parent:\n%s\ncontent:\n%s', parent, content)
+        # log.debug('appending parent:\n%s\ncontent:\n%s', parent, content)
         if self.start(content):
             self.appender.append(parent, content)
             self.end(parent, content)

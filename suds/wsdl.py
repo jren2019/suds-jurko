@@ -160,7 +160,7 @@ class Definitions(WObject):
         self.set_wrapped()
         for s in self.services:
             self.add_methods(s)
-        log.debug("WSDL at '%s' loaded:\n%s", url, self)
+        # log.debug("WSDL at '%s' loaded:\n%s", url, self)
 
     def mktns(self, root):
         """ Get/create the target namespace """

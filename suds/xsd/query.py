@@ -82,7 +82,7 @@ class Query(Object):
             return
         if self.resolved:
             result = result.resolve()
-        log.debug('%s, found as: %s', self.ref, Repr(result))
+        # log.debug('%s, found as: %s', self.ref, Repr(result))
         self.history.append(result)
         return result
 
@@ -124,7 +124,7 @@ class TypeQuery(Query):
         if schema.builtin(self.ref):
             name = self.ref[0]
             b = Factory.create(schema, name)
-            log.debug('%s, found builtin (%s)', self.id, name)
+            # log.debug('%s, found builtin (%s)', self.id, name)
             return b
         result = schema.types.get(self.ref)
         if self.filter(result):

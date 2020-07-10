@@ -86,7 +86,7 @@ class TypedContent(Content):
             return self
         query = TypeQuery(qref)
         query.history = [self]
-        log.debug('%s, resolving: %s\n using:%s', self.id, qref, query)
+        # log.debug('%s, resolving: %s\n using:%s', self.id, qref, query)
         resolved = query.execute(self.schema)
         if resolved is None:
             log.debug(self.schema)

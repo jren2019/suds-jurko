@@ -76,7 +76,7 @@ class Typed(Core):
         # 'content' value is both translated and sorted based on the XSD type.
         # Only values that are objects have their attributes sorted.
         #
-        log.debug('starting content:\n%s', content)
+        # log.debug('starting content:\n%s', content)
         if content.type is None:
             name = content.tag
             if name.startswith('_'):
@@ -148,7 +148,7 @@ class Typed(Core):
         else:
             node = Element(content.tag)
         self.encode(node, content)
-        log.debug('created - node:\n%s', node)
+        # log.debug('created - node:\n%s', node)
         return node
 
     def setnil(self, node, content):

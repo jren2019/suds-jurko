@@ -92,9 +92,9 @@ class SchemaCollection(UnicodeMixin):
             child.open_imports(options)
         for child in self.children:
             child.dereference()
-        log.debug('loaded:\n%s', self)
+        # log.debug('loaded:\n%s', self)
         merged = self.merge()
-        log.debug('MERGED:\n%s', merged)
+        # log.debug('MERGED:\n%s', merged)
         return merged
 
     def autoblend(self):
@@ -302,7 +302,7 @@ class Schema(UnicodeMixin):
             if imported is None:
                 continue
             imported.open_imports(options)
-            log.debug('imported:\n%s', imported)
+            # log.debug('imported:\n%s', imported)
             self.merge(imported)
 
     def dereference(self):
