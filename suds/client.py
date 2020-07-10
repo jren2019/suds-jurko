@@ -575,8 +575,8 @@ class SoapClient:
         binding = self.method.binding.input
         soapenv = binding.get_message(self.method, args, kwargs)
         timer.stop()
-        metrics.log.debug("message for '%s' created: %s", self.method.name,
-            timer)
+        # metrics.log.debug("message for '%s' created: %s", self.method.name,
+        #     timer)
         timer.start()
         result = self.send(soapenv)
         timer.stop()
