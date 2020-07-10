@@ -276,7 +276,7 @@ class TreeResolver(Resolver):
         """
         if len(self.stack):
             popped = self.stack.pop()
-            log.debug('pop: (%s)\n%s', Repr(popped), Repr(self.stack))
+            # log.debug('pop: (%s)\n%s', Repr(popped), Repr(self.stack))
             return popped
         log.debug('stack empty, not-popped')
         return None

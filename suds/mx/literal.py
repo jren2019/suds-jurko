@@ -126,7 +126,7 @@ class Typed(Core):
         # top of the resolver stack since for list processing we play games
         # with the resolver stack.
         #
-        log.debug('ending content:\n%s', content)
+        # log.debug('ending content:\n%s', content)
         current = self.resolver.top().type
         if current == content.type:
             self.resolver.pop()
