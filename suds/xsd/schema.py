@@ -324,7 +324,7 @@ class Schema(UnicodeMixin):
             midx = indexes.get(x)
             if midx is None: continue
             d = deps[midx]
-            log.debug('(%s) merging %s <== %s', self.tns[1], Repr(x), Repr(d))
+            # log.debug('(%s) merging %s <== %s', self.tns[1], Repr(x), Repr(d))
             x.merge(d)
 
     def locate(self, ns):

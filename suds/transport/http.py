@@ -61,7 +61,7 @@ class HttpTransport(Transport):
     def open(self, request):
         try:
             url = self.__get_request_url(request)
-            log.debug('opening (%s)', url)
+            # log.debug('opening (%s)', url)
             u2request = urllib2.Request(url)
             self.proxy = self.options.proxy
             return self.u2open(u2request)

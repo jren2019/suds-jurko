@@ -131,7 +131,7 @@ class Definitions(WObject):
         @param options: An options dictionary.
         @type options: L{options.Options}
         """
-        log.debug('reading WSDL at: %s ...', url)
+        # log.debug('reading WSDL at: %s ...', url)
         reader = DocumentReader(options)
         d = reader.open(url)
         root = d.root()
@@ -167,7 +167,7 @@ class Definitions(WObject):
         tns = root.get('targetNamespace')
         prefix = root.findPrefix(tns)
         if prefix is None:
-            log.debug('warning: tns (%s), not mapped to prefix', tns)
+            # log.debug('warning: tns (%s), not mapped to prefix', tns)
             prefix = 'tns'
         return (prefix, tns)
 
@@ -309,7 +309,7 @@ class Import(WObject):
     def load(self, definitions):
         """ Load the object by opening the URL """
         url = self.location
-        log.debug('importing (%s)', url)
+        # log.debug('importing (%s)', url)
         if '://' not in url:
             url = urljoin(definitions.url, url)
         options = definitions.options

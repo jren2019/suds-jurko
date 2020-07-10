@@ -592,7 +592,7 @@ class SoapClient:
         @rtype: I{builtin} or I{subclass of} L{Object}
         """
         location = self.location()
-        log.debug('sending to (%s)\nmessage:\n%s', location, soapenv)
+        # log.debug('sending to (%s)\nmessage:\n%s', location, soapenv)
         original_soapenv = soapenv
         plugins = PluginContainer(self.options.plugins)
         plugins.message.marshalled(envelope=soapenv.root())
@@ -721,7 +721,7 @@ class SoapClient:
             action = action.encode('utf-8')
         stock = {'Content-Type':'text/xml; charset=utf-8', 'SOAPAction':action}
         result = dict(stock, **self.options.headers)
-        log.debug('headers = %s', result)
+        # log.debug('headers = %s', result)
         return result
 
     def location(self):

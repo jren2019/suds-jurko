@@ -80,7 +80,7 @@ class DepList:
                     ref = top[1].next()
                     refd = self.index.get(ref)
                     if refd is None:
-                        log.debug('"%s" not found, skipped', Repr(ref))
+                        # log.debug('"%s" not found, skipped', Repr(ref))
                         continue
                     self.push(refd)
                 except StopIteration:

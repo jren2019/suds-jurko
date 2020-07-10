@@ -575,14 +575,14 @@ class Import(SchemaObject):
         if self.opened:
             return
         self.opened = True
-        log.debug('%s, importing ns="%s", location="%s"', self.id, self.ns[1], self.location)
+        # log.debug('%s, importing ns="%s", location="%s"', self.id, self.ns[1], self.location)
         result = self.locate()
         if result is None:
             if self.location is None:
                 log.debug('imported schema (%s) not-found', self.ns[1])
             else:
                 result = self.download(options)
-        log.debug('imported:\n%s', result)
+        # log.debug('imported:\n%s', result)
         return result
 
     def locate(self):
