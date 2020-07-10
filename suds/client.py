@@ -580,7 +580,7 @@ class SoapClient:
         timer.start()
         result = self.send(soapenv)
         timer.stop()
-        metrics.log.debug("method '%s' invoked: %s", self.method.name, timer)
+        # metrics.log.debug("method '%s' invoked: %s", self.method.name, timer)
         return result
 
     def send(self, soapenv):
@@ -612,7 +612,7 @@ class SoapClient:
             timer.start()
             reply = self.options.transport.send(request)
             timer.stop()
-            metrics.log.debug('waited %s on server reply', timer)
+            # metrics.log.debug('waited %s on server reply', timer)
         except TransportError, e:
             content = e.fp and e.fp.read() or ''
             return self.process_reply(reply=content, status=e.httpcode,
